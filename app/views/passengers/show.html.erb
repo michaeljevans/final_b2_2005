@@ -3,7 +3,7 @@
 <section class='flights'>
   <ul>
     <% @passenger.flights.each do |flight| %>
-      <li>Flight <%= link_to "Flight #{flight.number}", "/flights/#{flight.id}" %></li>
+      <li><%= link_to "Flight #{flight.number}", "/flights/#{flight.id}" %></li>
     <% end %>
   </ul>
 </section>
