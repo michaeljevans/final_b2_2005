@@ -16,9 +16,9 @@ RSpec.describe 'Passenger show page' do
     within '.flights' do
       expect(page).to have_content("Flight #{flight_1.number}")
       expect(page).to have_content("Flight #{flight_2.number}")
-      expect(page).to have_link(flight_1.number)
-      expect(page).to have_link(flight_2.number)
-      click_link flight_1.number
+      expect(page).to have_link("Flight #{flight_1.number}")
+      expect(page).to have_link("Flight #{flight_2.number}")
+      click_link "Flight #{flight_1.number}"
     end
 
     expect(current_path).to eq("/flights/#{flight_1.id}")
@@ -35,7 +35,7 @@ RSpec.describe 'Passenger show page' do
 
     within '.flights' do
       expect(page).to have_content("Flight #{flight_1.number}")
-      expect(page).to have_link(flight_1.number)
+      expect(page).to have_link("Flight #{flight_1.number}")
     end
 
     fill_in :flight_id, with: flight_2.id
@@ -46,8 +46,8 @@ RSpec.describe 'Passenger show page' do
     within '.flights' do
       expect(page).to have_content("Flight #{flight_1.number}")
       expect(page).to have_content("Flight #{flight_2.number}")
-      expect(page).to have_link(flight_1.number)
-      expect(page).to have_link(flight_2.number)
+      expect(page).to have_link("Flight #{flight_1.number}")
+      expect(page).to have_link("Flight #{flight_2.number}")
     end
   end
 end
