@@ -8,3 +8,9 @@
     <% end %>
   </ul>
 </section>
+
+<%= form_tag "/flight_passengers?passenger_id=#{@passenger.id}", method: :post do %>
+  <%= label_tag :flight_id, 'Flight Number' %>
+  <%= number_field_tag :flight_id %>
+  <%= submit_tag 'Assign Passenger to Flight' %>
+<% end %>
