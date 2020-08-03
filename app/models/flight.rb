@@ -5,4 +5,12 @@ class Flight < ApplicationRecord
   belongs_to :airline
   has_many :flight_passengers
   has_many :passengers, through: :flight_passengers
+
+  def minors_on_board
+    passengers.where('age <= ?', 18).count
+  end
+
+  def adults_on_board
+    passengers.where('age >= ?', 18).count
+  end
 end
