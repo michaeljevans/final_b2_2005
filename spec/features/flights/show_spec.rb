@@ -10,7 +10,7 @@ RSpec.describe 'Flight show page' do
 
     visit "/flights/#{flight_1.id}"
 
-    expect(page).to have_content("Flight # #{flight_1.number}")
+    expect(page).to have_content("Flight #{flight_1.number} Information")
     expect(page).to have_content("Date: #{flight_1.date}")
     expect(page).to have_content("Time: #{flight_1.time}")
     expect(page).to have_content("Departure City: #{flight_1.departure_city}")
