@@ -13,4 +13,5 @@ frontier = Airline.create!(name: 'Frontier')
 flight_1 = Flight.create!(number: 1727, date: '2020/08/03', time: "3:30 p.m. MST", departure_city: 'Denver', arrival_city: 'Reno', airline_id: frontier.id)
 
 # Passengers
+mike = Passenger.create!(name: 'Mike', age: 29)
 joe = Passenger.create!(name: 'Joe', age: 25)
