@@ -7,7 +7,7 @@ class Flight < ApplicationRecord
   has_many :passengers, through: :flight_passengers
 
   def minors_on_board
-    passengers.where('age <= ?', 18).count
+    passengers.where('age < ?', 18).count
   end
 
   def adults_on_board
