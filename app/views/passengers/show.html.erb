@@ -1,0 +1,10 @@
+<h1><%= @passenger.name %></h1>
+
+<section class='flights'>
+  Flights:
+  <ul>
+    <% @passenger.flights.each do |flight| %>
+      <li>Flight <%= link_to flight.number, "/flights/#{flight.id}" %></li>
+    <% end %>
+  </ul>
+</section>
