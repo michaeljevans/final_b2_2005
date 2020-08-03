@@ -6,6 +6,8 @@ RSpec.describe 'Passenger show page' do
     flight_1 = Flight.create!(number: 1727, date: '2020/08/03', time: "3:30 p.m. MST", departure_city: 'Denver', arrival_city: 'Reno', airline_id: frontier.id)
     flight_2 = Flight.create!(number: 747, date: '2020/08/09', time: "1:30 p.m. MST", departure_city: 'Reno', arrival_city: 'Denver', airline_id: frontier.id)
     joe = Passenger.create!(name: 'Joe', age: 25)
+    FlightPassenger.create!(flight_id: flight_1.id, passenger_id: joe.id)
+    FlightPassenger.create!(flight_id: flight_2.id, passenger_id: joe.id)
 
     visit "/passengers/#{joe.id}"
 
